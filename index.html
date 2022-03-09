@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Periodic Table Memoriser</title>
+    <style>
+        *:not(input) {
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #right-pane {
+            width: calc(100% - 1080px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #heading {
+            text-align: center;
+            margin: unset;
+        }
+
+        #periodic-table {
+            width: 1080px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cell {
+            width: 60px;
+            height: 60px;
+        }
+
+        .element-cell {
+            background-color: grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 1px 0 black inset;
+        }
+
+        .element-cell > p {
+            margin: unset;
+        }
+
+        .name {
+            font-size: 9px;
+        }
+
+        #menu > * {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="periodic-table"></div>
+
+    <div id="right-pane">
+        <h2 id="heading">Periodic Table Memory Game</h2>
+
+        <select name="mode" id="modes">
+            <option value="" disabled selected hidden>Choose a Mode</option>
+            <option value="interactive">Interactive</option>
+            <option value="spacial recall">Spacial Recall</option>
+            <option value="from electron structure">From Electron Structure</option>
+            <option value="from symbol">From Symbol</option>
+            <option value="from name">From Name</option>
+        </select>
+
+        <div id="menu"></div>
+    </div>
+</div>
+<script src="periodicTable.js"></script>
+</body>
+</html>
